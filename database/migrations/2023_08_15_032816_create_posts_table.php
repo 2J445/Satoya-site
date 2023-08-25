@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('name');
-            $table->string('image')->nullable(true);
+            $table->string('breed');
+            $table->string('image');
             $table->integer('age');
             $table->string('gender');
             $table->text('explanation');
+            $table->boolean('is_finished')->default(false);
             $table->timestamps();
         });
     }

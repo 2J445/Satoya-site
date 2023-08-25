@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="create-items">
                         <div class="form">
-                          <form action="/posts" method="POST">
+                          <form action="/posts" method="POST" enctype="multipart/form-data">
                             @csrf
                             
                             <div class="input-form">
@@ -21,6 +21,11 @@
                             <div class="input-form">
                               <label for="image">Image</label>
                               <input type="file" name="image">
+                            </div>
+                            
+                            <div class="input-form">
+                              <label for="breed">Breed</label>
+                              <input name="breed">
                             </div>
                             
                             <div class="input-form">
@@ -38,6 +43,7 @@
                             
                             <div class="input-form">
                               <label for="explanation">Explanation</label>
+                              <p>性格や癖など、その他の情報を教えてあげましょう。</p>
                               <textarea name="explanation" rows="4" cols="40"></textarea>
                             </div>
                             

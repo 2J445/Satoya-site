@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController; //投稿機能
+use App\Models\Post; //投稿一覧表示
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,8 @@ use App\Http\Controllers\PostsController; //投稿機能
 */
 
 Route::get('/', function () {
-    return view('home');
+    $posts = Post::all();
+    return view('home', compact('posts'));
     //return view('welcome');
 });
 
@@ -23,7 +25,6 @@ Route::get('/', function () {
 URL::forceScheme('https');
 
 //トップページ
-Route::get('home',[\App\Http\Controllers\HomeController::class, 'home']);
 //ユーザー
 Auth::routes();
 //サインアップ・ログイン後の遷移
@@ -32,6 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //投稿
 Route::get('/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
+Route::get('/posts/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
 //投稿を押した時
 Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');

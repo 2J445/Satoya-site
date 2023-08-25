@@ -2,13 +2,33 @@
 
 @section('content')
   @auth
-    <div class="container">
-      logged in!</br>
-      <a href="{{ route('post.create') }}">掲載</a>
-    </div>
+    @foreach($posts as $post)
+      <div class='card'>
+        <a href="/posts/{{$post['id']}}">
+          
+          <img src="{{ asset('storage/' . $post['image']) }}" >
+          @if($post->gender == 'オス')
+            {{ $post['name'] }}くん({{ $post['age'] }}歳)</br>
+          @else
+            {{ $post['name'] }}ちゃん({{ $post['age'] }}歳)</br>
+          @endif
+        </a>
+      </div>
+    @endforeach
   @else
-    <div class="container">
-      home
-    </div>
+    @foreach($posts as $post)
+      <div class='card'>
+        <a href="/posts/{{$post['id']}}">
+          
+          <img src="{{ asset('storage/' . $post['image']) }}">
+          @if($post->gender == 'オス')
+            {{ $post['name'] }}くん({{ $post['age'] }}歳)</br>
+          @else
+            {{ $post['name'] }}ちゃん({{ $post['age'] }}歳)</br>
+          @endif
+        </a>
+      </div>
+    @endforeach
   @endauth
 @endsection
+
