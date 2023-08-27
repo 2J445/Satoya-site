@@ -31,7 +31,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //投稿
-Route::get('/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
+Route::resource('post', App\Http\Controllers\PostController::class);
+//Route::get('/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 Route::get('/posts/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 

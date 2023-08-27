@@ -37,7 +37,8 @@ class PostController extends Controller
     {
       $post = Post::find($id);
       $post->delete();
-      return redirect('/posts');
+      \Session::flash('flash_message', '削除しました。');
+      return redirect('/');
     }
     
     public function store(Request $request)
@@ -57,6 +58,6 @@ class PostController extends Controller
       $post->explanation = $request->explanation;
       // データベースに保存
       $post->save();
-      return redirect('/');
+      return redirect('/')->with('flash_message', '投稿が完了しました');
     }
 }
