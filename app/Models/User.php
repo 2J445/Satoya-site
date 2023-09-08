@@ -16,6 +16,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Post'); 
     }
+    public function rooms()
+    {
+        return $this->hasMany('App\Room'); 
+    }
+    public function messages()
+    {
+        return $this->hasMany('App\Message'); 
+    }
     
     /**
      * The attributes that are mass assignable.
@@ -25,8 +33,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'post_code',
         'address',
-        'telephone-number',
+        'telephone_number',
         'password',
     ];
 

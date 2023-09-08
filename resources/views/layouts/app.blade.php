@@ -60,7 +60,10 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a href="{{ route('user.show', $user->id) }}" class="dropdown-item">マイページ</a>
                                     <a href="{{ route('post.create') }}" class="dropdown-item">掲載</a>
+                                    <a href="{{ route('room.index') }}" class="dropdown-item">メッセージ</a>
+                                    <a href="{{ route('user.edit', $user->id) }}" class="dropdown-item">設定</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

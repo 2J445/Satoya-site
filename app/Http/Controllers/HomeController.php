@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+use App\Models\User;
 use Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('home', ['posts' => $posts]);
+        $user = Auth::user();
+        return view('home', ['posts' => $posts, 'user'=> $user]);
     }
 }
