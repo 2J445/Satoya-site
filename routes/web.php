@@ -32,6 +32,8 @@ URL::forceScheme('https');
 Auth::routes();
 Route::resource('user', App\Http\Controllers\UserController::class);
 Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
+Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']); //ユーザー編集
+Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'update']); //ユーザーUPDATE
 
 //サインアップ・ログイン後の遷移
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
