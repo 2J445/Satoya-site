@@ -56,13 +56,12 @@ class PostController extends Controller
       // フォームから送られてきたデータをそれぞれ代入
       $post->user_id = $user_id;
       $post->name = $request->name;
-      $post->breed = $request->breed;
+      $post->antique_type = $request->antique_type;
       
       //画像投稿の記述
       $post->image = $request->image->store('images');
       
-      $post->age = $request->age;
-      $post->gender = $request->gender;
+      $post->old = $request->old;
       $post->explanation = $request->explanation;
       // データベースに保存
       $post->save();

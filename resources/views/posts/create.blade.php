@@ -19,31 +19,31 @@
                             </div>
                             
                             <div class="input-form">
+                              <label for="antique_typee">Gener</label>
+                              <select name="antique_type">
+                               	<option value="家具">家具</option>
+	                              <option value="服飾">服飾</option>
+	                              <option value="レコード">レコード</option>
+	                              <option value="玩具">玩具</option>
+	                              <option value="食器">食器</option>
+	                              <option value="人形">人形</option>
+	                              <option value="その他">その他</option>
+                              </select>
+                            </div>
+                            
+                            <div class="input-form">
                               <label for="image">Image</label>
                               <input type="file" name="image">
                             </div>
                             
                             <div class="input-form">
-                              <label for="breed">Breed</label>
-                              <input name="breed">
-                            </div>
-                            
-                            <div class="input-form">
-                              <label for="age">Age</label>
-                              <input type="number" name="age" min="0">
-                            </div>
-                            
-                            <div class="input-form">
-                              <label for="gender">Gener</label>
-                              <select name="gender">
-                               	<option value="オス">オス</option>
-	                            <option value="メス">メス</option>
-                              </select>
+                              <label for="old">Old</label>
+                              <input type="number" name="old" min="0">
                             </div>
                             
                             <div class="input-form">
                               <label for="explanation">Explanation</label>
-                              <p>性格や癖など、その他の情報を教えてあげましょう。</p>
+                              <p>出展品の特徴や情報を書き込んでください</p>
                               <textarea name="explanation" rows="4" cols="40"></textarea>
                             </div>
                             

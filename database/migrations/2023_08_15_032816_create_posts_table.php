@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->constrained();
             $table->string('name');
-            $table->string('breed');
+            $table->string('antique_type');
             $table->string('image');
-            $table->integer('age');
-            $table->string('gender');
+            $table->string('old');
             $table->text('explanation');
             $table->boolean('is_finished')->default(false);
             $table->timestamps();
