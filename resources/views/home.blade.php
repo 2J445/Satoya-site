@@ -8,7 +8,6 @@
     </div>
 @endif
   @auth
-  logged in!
     @foreach($posts as $post)
       <div class='card'>
         <a href="/posts/{{$post['id']}}">
